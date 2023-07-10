@@ -1,37 +1,43 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-use App\Http\livewire\HomeComponent;
-use App\Http\livewire\ShopComponent;
-use App\Http\livewire\CartComponent;
-use App\Http\livewire\CheckoutComponent;
-use App\Http\livewire\DetailsComponent;
-use App\Http\livewire\CategoryComponent;
-use App\Http\livewire\SearchComponent;
-use App\Http\livewire\WishlistComponent;
-use App\Http\livewire\ThankyouComponent;
+
+use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\DetailsComponent;
+use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\CheckoutComponent;
+use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\CategoryComponent;
+use App\Http\Livewire\SearchComponent;
+use App\Http\Livewire\WishlistComponent;
+
+//for user
+use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserOrdersComponent;
+use App\Http\Livewire\User\UserOrderDetailsComponent;
+
+//for admin
+use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminEditCategoryComponent;
+
+use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\Admin\AdminAddProductComponent;
+use App\Http\Livewire\Admin\AdminEditProductComponent;
+
+use App\Http\Livewire\Admin\AdminHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
+use App\Http\Livewire\Admin\AdminEditHomeSliderComponent;
+
+use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
+
+use App\Http\Livewire\Admin\AdminSaleComponent;
+
+use App\Http\Livewire\Admin\AdminOrderComponent;
+use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 
 
-use App\Http\livewire\user\UserDashboardComponent;
-use App\Http\livewire\user\UserOrdersComponent;
-use App\Http\livewire\user\UserOrderDetailsComponent;
-
-
-
-use App\Http\livewire\admin\AdminDashboardComponent;
-use App\Http\livewire\Admin\AdminCategoryComponent;
-use App\Http\livewire\Admin\AdminAddCategoryComponent;
-use App\Http\livewire\Admin\AdminEditCategoryComponent;
-use App\Http\livewire\Admin\AdminProductComponent;
-use App\Http\livewire\Admin\AdminAddProductComponent;
-use App\Http\livewire\Admin\AdminEditProductComponent;
-use App\Http\livewire\Admin\AdminHomeSliderComponent;
-use App\Http\livewire\Admin\AdminAddHomeSliderComponent;
-use App\Http\livewire\Admin\AdminEditHomeSliderComponent;
-use App\Http\livewire\Admin\AdminHomeCategoryComponent;
-use App\Http\livewire\Admin\AdminSaleComponent;
-use App\Http\livewire\Admin\AdminOrderComponent;
-use App\Http\livewire\Admin\AdminOrderDetailsComponent;
 
 
 /*
@@ -49,11 +55,13 @@ use App\Http\livewire\Admin\AdminOrderDetailsComponent;
 //    return view('welcome');
 //});
 
-Route::get('/', HomeComponent::class);
-Route::get('/shop', ShopComponent::class);
+// Route::get('/', HomeComponent::class);
+Route::get("/" , HomeComponent::class);
+Route::get("/shop", ShopComponent::class);
 Route::get('/cart', CartComponent::class)->name('product.cart');
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
+
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
